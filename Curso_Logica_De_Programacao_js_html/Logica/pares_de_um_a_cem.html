@@ -1,0 +1,33 @@
+<meta charset="UTF-8">
+<script>
+
+    function pulaLinha() {
+
+        document.write("<br>");
+    }
+
+    function mostra(frase) {
+
+        document.write(frase);
+        pulaLinha();
+    }
+
+    function verificaNumeroPar(numero) {
+        var verificador = false;
+        if (numero % 2 == 0) {
+            verificador = true;
+        }
+
+        return verificador;
+    }
+
+    var contador = 0;
+
+    while (contador <= 100) {
+        if (verificaNumeroPar(contador)){
+            mostra(contador);
+        }
+        contador ++;
+    }
+
+</script>
