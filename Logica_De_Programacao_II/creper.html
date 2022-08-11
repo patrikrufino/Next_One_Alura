@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Creper - JS</title>
+</head>
+<body>
+    <canvas width="600" height="400"></canvas>
+
+    <script>
+        var screen = document.querySelector("canvas");
+        var ctx = screen.getContext("2d");
+
+        // Head
+        ctx.fillStyle = "darkgreen";
+        ctx.fillRect(125, 0, 350, 300);
+
+        // Eyes
+        ctx.fillStyle = "black";
+        ctx.fillRect(175, 60, 90, 90);
+        ctx.fillRect(335, 60, 90, 90);
+
+        // Nose
+        ctx.fillRect(265, 150, 70, 100);
+
+        // Mouth
+        ctx.fillRect(225, 200, 40, 100);
+        ctx.fillRect(335, 200, 40, 100);
+        
+    </script>
+</body>
+</html>

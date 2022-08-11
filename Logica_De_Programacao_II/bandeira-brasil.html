@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bandeira do Brasil com JS</title>
+</head>
+
+<body>
+
+    <canvas width="600" height="400">
+
+    </canvas>
+    <script>
+        var screen = document.querySelector('canvas');
+        var ctx = screen.getContext('2d');
+
+
+        // Bandeira do Brasil
+        ctx.fillStyle = 'green';
+        ctx.fillRect(0, 0, 600, 400);
+
+        // Losango amarelo
+        ctx.fillStyle = 'yellow';
+        ctx.beginPath();
+        ctx.moveTo(300, 25);
+        ctx.lineTo(575, 200);
+        ctx.lineTo(300,375);
+        ctx.lineTo(25, 200);
+        ctx.fill();
+
+        // Circulo
+        ctx.fillStyle = 'darkblue';
+        ctx.beginPath();
+        ctx.arc(300, 200, 100, 0, 2 * 3.14);
+        ctx.fill();
+    </script>
+
+</body>
+
+</html>
