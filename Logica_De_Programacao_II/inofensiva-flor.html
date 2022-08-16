@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inofensiva Flor</title>
+</head>
+
+<body>
+    <style>
+        body {
+            background-color: #d3d3d3;
+        }
+    </style>
+
+    <canvas width="600" height="400"></canvas>
+
+
+    <script>
+        var tela = document.querySelector('canvas');
+        var pincel = tela.getContext('2d');
+        pincel.fillStyle = 'lightgray';
+        pincel.fillRect(0, 0, 600, 400);
+
+        function desenhaCirculo(x, y, raio, cor) {
+
+            pincel.fillStyle = cor;
+            pincel.beginPath();
+            pincel.arc(x, y, raio, 0, 2 * 3.14);
+            pincel.fill();
+        }
+
+        desenhaCirculo(300, 200, 25, 'red');
+        desenhaCirculo(300, 250, 25, 'blue');
+        desenhaCirculo(300, 150, 25, 'yellow');
+        desenhaCirculo(350, 200, 25, 'black');
+        desenhaCirculo(250, 200, 25, 'orange');
+        
+    </script>
+</body>
+
+</html>
