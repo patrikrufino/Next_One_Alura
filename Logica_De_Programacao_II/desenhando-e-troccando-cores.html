@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desenhando e Trocando e Cores</title>
+</head>
+<body>
+    <canvas width="600" height="400"></canvas>
+
+    <script>
+        var screen = document.querySelector("canvas");
+        var ctx = screen.getContext("2d");
+
+        // Pinta a tela de Cinza
+        ctx.fillStyle = "grey";
+        ctx.fillRect(0, 0, 600, 400);
+
+        // Cria um array de 3 cores
+        var colors = ["blue", "red", "green"];
+
+        var indexNow = 0;
+
+        // Cria uma função para desenhar um circulo na screen
+        function drawCircle(event) {
+            var x = event.pageX - screen.offsetLeft;
+            var y = event.pageY - screen.offsetTop;
+            ctx.fillStyle = colors[indexNow];
+            ctx.beginPath();
+            ctx.arc(x, y, 10, 0, 2 * Math.PI);
+            ctx.fill();
+            console.log(x + "," + y);
+        }
+
+        // Adiciona um evento de click na screen
+        screen.onclick = drawCircle;
+
+        // Cria uma função para trocar de cor
+        function changeColor() {
+            indexNow ++;
+
+            if (indexNow == colors.length) {
+                indexNow = 0;
+            }
+
+            return false;
+        }
+
+        // Adiciona um evento de click no botão direito do mouse
+        screen.oncontextmenu = changeColor;
+    </script>
+</body>
+</html>
