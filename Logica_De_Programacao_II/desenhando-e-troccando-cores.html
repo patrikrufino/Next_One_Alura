@@ -28,7 +28,13 @@
             var y = event.pageY - screen.offsetTop;
             ctx.fillStyle = colors[indexNow];
             ctx.beginPath();
-            ctx.arc(x, y, 10, 0, 2 * Math.PI);
+            
+            // Verifica se a tecla Shift está pressionada
+            if (event.shiftKey) {
+                ctx.arc(x, y, 20, 0, 2 * Math.PI);
+            } else {
+                ctx.arc(x, y, 10, 0, 2 * Math.PI);
+            }
             ctx.fill();
             console.log(x + "," + y);
         }
