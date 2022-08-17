@@ -36,6 +36,14 @@
                 raio += 10;
             }
 
+            // Decrementa 5 ao raio a cada vez que a tecla CTRL é pressionada, o raio não pode ser menor que 10
+            if (event.ctrlKey) {
+                raio -= 5;
+                if (raio < 10) {
+                    raio = 10;
+                }
+            }
+
             ctx.arc(x, y, raio, 0, 2 * Math.PI);
             ctx.fill();
             console.log(x + "," + y);
