@@ -22,6 +22,8 @@
 
         var indexNow = 0;
 
+        var raio = 10;
+
         // Cria uma função para desenhar um circulo na screen
         function drawCircle(event) {
             var x = event.pageX - screen.offsetLeft;
@@ -29,12 +31,12 @@
             ctx.fillStyle = colors[indexNow];
             ctx.beginPath();
             
-            // Verifica se a tecla Shift está pressionada
+            // Soma 10 ao raio a cada vez que a tecla SHIFT é pressionada
             if (event.shiftKey) {
-                ctx.arc(x, y, 20, 0, 2 * Math.PI);
-            } else {
-                ctx.arc(x, y, 10, 0, 2 * Math.PI);
+                raio += 10;
             }
+
+            ctx.arc(x, y, raio, 0, 2 * Math.PI);
             ctx.fill();
             console.log(x + "," + y);
         }
