@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
     <meta charset="UTF-8">
@@ -11,18 +11,15 @@
 <body>
     <canvas width="600" height="400"></canvas>
 
+    Escolha uma cor: <input type="color" id="cor">
     <script>
         var screen = document.querySelector("canvas");
         var ctx = screen.getContext("2d");
+        var cor = document.querySelector("#cor");
 
         // Pinta a tela de Cinza
         ctx.fillStyle = "grey";
         ctx.fillRect(0, 0, 600, 400);
-
-        // Cria um array de 3 cores
-        var colors = ["blue", "red", "green"];
-
-        var indexNow = 0;
 
         var raio = 10;
 
@@ -34,7 +31,7 @@
             if (draw) {
                 var x = event.pageX - screen.offsetLeft;
                 var y = event.pageY - screen.offsetTop;
-                ctx.fillStyle = colors[indexNow];
+                ctx.fillStyle = cor.value;
                 ctx.beginPath();
 
                 // Soma 10 ao raio a cada vez que a tecla SHIFT é pressionada
@@ -58,19 +55,6 @@
 
         // Desenha circulos na tela enquanto o botão do mouse estiver pressionado
         screen.onmousemove = drawCircle;
-
-
-        // Cria uma função para trocar de cor
-        function changeColor() {
-            indexNow++;
-
-            if (indexNow == colors.length) {
-                indexNow = 0;
-            }
-
-            return false;
-        }
-
 
         // Cria funções anonimas que habilitam e desabilitam o draw associdado ao onmouseup e onmousedown
         screen.onmousedown = function() {
