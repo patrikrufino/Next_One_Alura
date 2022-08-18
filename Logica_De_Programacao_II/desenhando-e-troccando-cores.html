@@ -5,21 +5,34 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Desenhando e Trocando e Cores</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <title>Paint</title>
 </head>
 
 <body>
-    <canvas width="600" height="400"></canvas>
+    
+    <div class="container justify-content-center">
 
-    Escolha uma cor: <input type="color" id="cor">
+        <h1>Paint</h1>
+        
+        <div class="form-label">
+            Escolha uma cor: <input class="form-control form-control-color"type="color" id="cor">
+        </div>
+
+        <canvas class="card shadow-lg border border-warning rounded-3" width="640" height="480"></canvas>
+    </div>
     <script>
         var screen = document.querySelector("canvas");
         var ctx = screen.getContext("2d");
         var cor = document.querySelector("#cor");
 
         // Pinta a tela de Cinza
-        ctx.fillStyle = "grey";
-        ctx.fillRect(0, 0, 600, 400);
+        ctx.fillStyle = "#fefefe";
+        ctx.fillRect(0, 0, 640 , 480);
 
         var raio = 10;
 
@@ -57,15 +70,13 @@
         screen.onmousemove = drawCircle;
 
         // Cria funções anonimas que habilitam e desabilitam o draw associdado ao onmouseup e onmousedown
-        screen.onmousedown = function() {
+        screen.onmousedown = function () {
             draw = true;
         }
-        screen.onmouseup = function() {
+        screen.onmouseup = function () {
             draw = false;
         }
 
-        // Adiciona um evento de click no botão direito do mouse
-        screen.oncontextmenu = changeColor;
     </script>
 </body>
 
