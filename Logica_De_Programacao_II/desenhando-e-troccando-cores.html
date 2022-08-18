@@ -71,18 +71,14 @@
             return false;
         }
 
-        // Cria funções que habilitam e desabilitam o draw
-        function enableDraw() {
+
+        // Cria funções anonimas que habilitam e desabilitam o draw associdado ao onmouseup e onmousedown
+        screen.onmousedown = function() {
             draw = true;
         }
-
-        function disableDraw() {
+        screen.onmouseup = function() {
             draw = false;
         }
-
-        // Associa as funções ao onmouseup e onmousedown
-        screen.onmousedown = enableDraw;
-        screen.onmouseup = disableDraw;
 
         // Adiciona um evento de click no botão direito do mouse
         screen.oncontextmenu = changeColor;
