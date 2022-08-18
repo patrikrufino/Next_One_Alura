@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Desenhando e Trocando e Cores</title>
 </head>
+
 <body>
     <canvas width="600" height="400"></canvas>
 
@@ -24,37 +26,43 @@
 
         var raio = 10;
 
+        var draw = false;
+
         // Cria uma função para desenhar um circulo na screen
         function drawCircle(event) {
-            var x = event.pageX - screen.offsetLeft;
-            var y = event.pageY - screen.offsetTop;
-            ctx.fillStyle = colors[indexNow];
-            ctx.beginPath();
-            
-            // Soma 10 ao raio a cada vez que a tecla SHIFT é pressionada
-            if (event.shiftKey) {
-                raio += 10;
-            }
 
-            // Decrementa 5 ao raio a cada vez que a tecla CTRL é pressionada, o raio não pode ser menor que 10
-            if (event.ctrlKey) {
-                raio -= 5;
-                if (raio < 10) {
-                    raio = 10;
+            if (draw) {
+                var x = event.pageX - screen.offsetLeft;
+                var y = event.pageY - screen.offsetTop;
+                ctx.fillStyle = colors[indexNow];
+                ctx.beginPath();
+
+                // Soma 10 ao raio a cada vez que a tecla SHIFT é pressionada
+                if (event.shiftKey) {
+                    raio += 10;
                 }
-            }
 
-            ctx.arc(x, y, raio, 0, 2 * Math.PI);
-            ctx.fill();
-            console.log(x + "," + y);
+                // Decrementa 5 ao raio a cada vez que a tecla CTRL é pressionada, o raio não pode ser menor que 10
+                if (event.ctrlKey) {
+                    raio -= 5;
+                    if (raio < 10) {
+                        raio = 10;
+                    }
+                }
+
+                ctx.arc(x, y, raio, 0, 2 * Math.PI);
+                ctx.fill();
+                console.log(x + "," + y);
+            }
         }
 
-        // Adiciona um evento de click na screen
-        screen.onclick = drawCircle;
+        // Desenha circulos na tela enquanto o botão do mouse estiver pressionado
+        screen.onmousemove = drawCircle;
+
 
         // Cria uma função para trocar de cor
         function changeColor() {
-            indexNow ++;
+            indexNow++;
 
             if (indexNow == colors.length) {
                 indexNow = 0;
@@ -63,8 +71,22 @@
             return false;
         }
 
+        // Cria funções que habilitam e desabilitam o draw
+        function enableDraw() {
+            draw = true;
+        }
+
+        function disableDraw() {
+            draw = false;
+        }
+
+        // Associa as funções ao onmouseup e onmousedown
+        screen.onmousedown = enableDraw;
+        screen.onmouseup = disableDraw;
+
         // Adiciona um evento de click no botão direito do mouse
         screen.oncontextmenu = changeColor;
     </script>
 </body>
+
 </html>
