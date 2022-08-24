@@ -18,7 +18,7 @@
     <div class="container justify-content-center">
 
         <h1>Paint</h1>
-        
+
         <div class="form-label">
             Escolha uma cor: <input class="form-control form-control-color"type="color" id="cor">
         </div>
@@ -62,8 +62,10 @@
 
                 ctx.arc(x, y, raio, 0, 2 * Math.PI);
                 ctx.fill();
-                console.log(x + "," + y);
+                console.log(x + "," + y) 
+                
             }
+
         }
 
         // Desenha circulos na tela enquanto o botão do mouse estiver pressionado
@@ -76,7 +78,8 @@
         screen.onmouseup = function () {
             draw = false;
         }
-
+        
+        document.write("<div class=\"container\"><h2> Tamanho do Pincel: " + raio + "</h2></div>");
     </script>
 </body>
 

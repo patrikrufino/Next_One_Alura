@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <canvas width="600" height="400"></canvas>
+
+    <script>
+
+        var canvas = document.querySelector('canvas');
+        var ctx = canvas.getContext('2d');
+        ctx.fillStyle = 'lightgray';
+        ctx.fillRect(0, 0, 600, 400);
+
+        function drawCircle(x, y, radius) {
+            ctx.fillStyle = 'blue';
+            ctx.beginPath();
+            ctx.arc(x, y, radius, 0, 2 * Math.PI, false);
+            ctx.fill();
+        }
+
+        drawCircle(20, 20, 10);
+
+    </script>
+</body>
+
+</html>
