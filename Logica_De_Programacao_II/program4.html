@@ -29,13 +29,20 @@
             ctx.clearRect(0, 0, 600, 400);
         }
 
-        let x = 20
+        var x = 20
         function refreshCanvas() {
             clearCanvas();
             drawCircle(x, 20, 10);
             x++;
         }
 
+        function verifyX() {
+            if (x > 600) {
+                x = 0;
+            }
+        }
+
+        setInterval(verifyX, 5);
         setInterval(refreshCanvas, 5);
 
         drawCircle(20, 20, 10);
