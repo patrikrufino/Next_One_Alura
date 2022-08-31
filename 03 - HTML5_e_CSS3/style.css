@@ -1,11 +1,17 @@
 body {
     margin: 0;
-    text-align: center;
+}
+
+header .logo {
+    font-size: 40px;
+    color: dodgerblue;
+    padding-left: 20px;
 }
 
 .principal  {
     background: #fefefe;
     padding: 3rem;
+    text-align: center;
 }
 
 em {
