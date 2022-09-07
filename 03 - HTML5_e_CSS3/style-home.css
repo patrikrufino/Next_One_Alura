@@ -1,0 +1,61 @@
+body {
+    margin: 0;
+}
+
+header .logo {
+    font-size: 40px;
+    color: dodgerblue;
+    padding-left: 20px;
+}
+
+.principal  {
+    background: #fefefe;
+    padding: 3rem;
+    text-align: center;
+}
+
+em {
+    font-size: 20px;
+}
+
+em strong {
+    color: red;
+}
+
+img {
+    width: 80%;
+    border-radius: 10px;
+}
+
+.beneficios {
+    display: flex;
+    justify-content: center;
+    padding: 3rem;
+    
+}
+
+.beneficios .text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 3rem;
+}
+
+.beneficios .text h2 {
+    font-size: 40px;
+    color: #393939;
+}
+
+.beneficios .text ul li {
+    vertical-align: top;
+    font-style: italic;
+    font-size: 32px;
+    margin-bottom: 10px; 
+    list-style-type: none;
+}
+
+.beneficios img {
+    width: 50%;
+    border-radius: 10px;
+}
