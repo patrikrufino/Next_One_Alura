@@ -150,3 +150,25 @@ form label, form legend {
     background: #237de4;
     transform: scale(1.02);
 }
+
+table {
+	width: 50vh;
+    margin: 20px 0 40px;
+}
+
+thead {
+    background: #555555;
+    color: white;
+    font-weight: bold;
+}
+
+td, th {
+	border: 1px solid #ffffff;
+	margin: 1px;
+    padding: 8px 15px;
+	border-radius: 5px;
+}
+
+td {
+	background-color: antiquewhite;
+}
